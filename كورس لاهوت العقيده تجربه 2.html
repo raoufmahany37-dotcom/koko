@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>كورس لاهوت العقيدة - من هو السيد المسيح؟</title>
+  <meta name="description" content="دورة متكاملة في لاهوت العقيدة المسيحية: اكتشاف هوية السيد المسيح من خلال شهادات متعددة من الكتاب المقدس">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-light: #81c784;
+      --primary-dark: #388e3c;
+      --bg: #000;
+      --bg-gradient: linear-gradient(135deg, #000, #0d1b2a, #1a1a2e);
+      --text: #e0e0e0;
+      --text-light: #f5f5f5;
+      --card-bg: #0a3622;
+      --card-hover: #2e7d32;
+      --shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+      --shadow-hover: 0 18px 35px rgba(0, 0, 0, 0.7);
+      --glow: 0 0 20px rgba(76, 175, 80, 0.2);
+      --glow-hover: 0 0 50px rgba(76, 175, 80, 0.5);
+      --border-radius: 18px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      text-align: center;
+      direction: rtl;
+      min-height: 100vh;
+      padding: 50px 20px;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.05) 0%, transparent 50%);
+      z-index: -1;
+    }
+
+    /* تأثير النجوم */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* تأثير الموجات */
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234caf50" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+      animation: wave 15s linear infinite;
+    }
+
+    .wave:nth-child(2) {
+      animation-duration: 20s;
+      opacity: 0.5;
+      bottom: 10px;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* تأثيرات النص المتلألئة */
+    .sparkle-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .sparkle-text::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: translateX(-100%);
+      animation: sparkle 3s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .header {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 10%;
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      border-radius: 3px;
+    }
+
+    .subtitle {
+      font-size: 2.2rem;
+      color: var(--text-light);
+      margin-bottom: 60px;
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--primary);
+      background: rgba(76, 175, 80, 0.1);
+      font-weight: 500;
+      backdrop-filter: blur(5px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subtitle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: var(--transition);
+    }
+
+    .subtitle:hover::before {
+      right: 100%;
+    }
+
+    .intro-text {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      padding: 20px;
+      background: rgba(10, 54, 34, 0.3);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-text::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.05), transparent);
+      transform: translateX(-100%);
+      animation: slide 8s infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 10px 0 60px;
+    }
+
+    .box-link {
+      text-decoration: none;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .box {
+      width: 360px;
+      min-height: 180px;
+      padding: 28px;
+      background: linear-gradient(145deg, var(--card-bg), var(--primary-dark));
+      border: 2px solid var(--primary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow), var(--glow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      line-height: 1.8;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+
+    .box:hover::before {
+      transform: translateX(100%);
+    }
+
+    .box:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: var(--shadow-hover), var(--glow-hover);
+      background: linear-gradient(145deg, var(--card-hover), #43a047);
+    }
+
+    .box-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+      transition: var(--transition);
+    }
+
+    .box:hover .box-icon {
+      transform: scale(1.2) rotate(5deg);
+      opacity: 1;
+    }
+
+    .progress-indicator {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(76, 175, 80, 0.2);
+      z-index: 1001;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-light), var(--primary));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      border: none;
+      outline: none;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: scale(1.1);
+      background: var(--primary-dark);
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+    }
+
+    .footer-name {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.4rem;
+      color: rgba(76, 175, 80, 0.9);
+      font-weight: bold;
+      font-family: 'Tajawal', sans-serif;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      border: 1px solid var(--primary);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-name:hover {
+      color: var(--primary-light);
+      background: rgba(0, 0, 0, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+
+    .footer-name::before {
+      content: "✝";
+      font-size: 1.2rem;
+    }
+
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-gradient);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(76, 175, 80, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--primary);
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    .loading-text {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* تأثيرات دخول العناصر */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* تأثيرات النبض */
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* تأثيرات الضوء العائم */
+    .floating-light {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+      filter: blur(20px);
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .floating-light:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-light:nth-child(2) {
+      top: 60%;
+      left: 80%;
+      animation-delay: 5s;
+    }
+
+    .floating-light:nth-child(3) {
+      top: 80%;
+      left: 20%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(20px, 20px) scale(1.1); }
+      50% { transform: translate(-15px, 10px) scale(0.9); }
+      75% { transform: translate(10px, -15px) scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .subtitle {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+      }
+      .intro-text {
+        font-size: 1.1rem;
+        padding: 15px;
+      }
+      .box {
+        width: 300px;
+        min-height: 160px;
+        font-size: 1.4rem;
+        padding: 22px;
+      }
+      .box-icon {
+        font-size: 2rem;
+      }
+      .floating-light {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+      .subtitle {
+        font-size: 1.6rem;
+      }
+      .box {
+        width: 280px;
+        font-size: 1.25rem;
+        min-height: 150px;
+        padding: 20px;
+      }
+      .footer-name, .back-to-top {
+        left: 15px;
+        bottom: 15px;
+      }
+      .footer-name {
+        font-size: 1.2rem;
+        padding: 10px 14px;
+      }
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 16pt;
+      }
+      .box {
+        background: #e0f7e0 !important;
+        color: #000 !important;
+        border: 2px solid #4caf50;
+        box-shadow: none;
+      }
+      .back-to-top, .footer-name, .progress-indicator, .stars, .waves, .floating-light {
+        display: none;
+      }
+      h1, .subtitle {
+        color: #2e7d32;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- تأثير النجوم -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- تأثير الموجات -->
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <!-- أضواء عائمة -->
+  <div class="floating-light"></div>
+  <div class="floating-light"></div>
+  <div class="floating-light"></div>
+
+  <!-- شاشة التحميل -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">جاري التحميل...</div>
+  </div>
+
+  <!-- شريط التقدم -->
+  <div class="progress-indicator">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="header">
+    <h1 class="fade-in">كورس لاهوت العقيدة</h1>
+    <div class="subtitle fade-in">من هو السيد المسيح؟</div>
+    
+    <div class="intro-text fade-in">
+      اكتشف هوية السيد المسيح من خلال دراسة شاملة للشهادات المختلفة في الكتاب المقدس. 
+      هذه الدورة تساعدك على فهم لاهوت المسيح بعمق من خلال الأدلة الكتابية المتعددة.
+    </div>
+  </div>
+
+  <div class="container">
+    <a href="ما  هي صفات التي لا يشترك معه احد فيها.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">👑</div>
+        ما هي الصفات التي لا يشترك معه أحد فيها؟
+      </div>
+    </a>
+    <a href="شهاده الاب عن الابن.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">👨‍👦</div>
+        شهادة الآب عن الابن
+      </div>
+    </a>
+    <a href="شهاده المسيج علي نفسه.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">🗣️</div>
+        شهادة المسيح على نفسه
+      </div>
+    </a>
+    <a href="شهاده التلميذ و البشريه كامله.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">👥</div>
+        شهادة التلميذ والبشرية كلها
+      </div>
+    </a>
+    <a href="شهاده الملائكه والشياطين.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">👼</div>
+        شهادة الملائكة والشياطين
+      </div>
+    </a>
+    <a href="شهاده الطبيعه .html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">🌿</div>
+        شهادة الطبيعة وقبول السيد المسيح للسجود
+      </div>
+    </a>
+    <a href="شهاده ميلاد العجيب و قيامته.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">✝️</div>
+        شهادة الميلاد العجيب والقيامة
+      </div>
+    </a>
+    <a href="شهاده الاعمال و المعجزات.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">✨</div>
+        شهادة الأعمال والمعجزات
+      </div>
+    </a>
+    <a href="unit الخاتمه.html" class="box-link">
+      <div class="box fade-in">
+        <div class="box-icon">📚</div>
+        الوحدة الخاتمة
+      </div>
+    </a>
+  </div>
+
+  <!-- اسم المؤلف -->
+  <div class="footer-name">
+    Kyrlos Raouf
+  </div>
+
+  <!-- زر العودة للأعلى -->
+  <button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">↑</button>
+
+  <script>
+    // إنشاء النجوم بشكل عشوائي
+    const starsContainer = document.getElementById('stars');
+    const starCount = 200;
+    
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      
+      // حجم عشوائي للنجوم
+      const size = Math.random() * 3 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // مواضع عشوائية
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      
+      // مدة ومدة تأخير عشوائية للوميض
+      const duration = Math.random() * 5 + 3;
+      const delay = Math.random() * 5;
+      star.style.animationDuration = `${duration}s`;
+      star.style.animationDelay = `${delay}s`;
+      
+      starsContainer.appendChild(star);
+    }
+
+    // إخفاء شاشة التحميل بعد تحميل الصفحة
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loadingScreen');
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 800);
+    });
+
+    // شريط التقدم
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+      
+      // زر العودة للأعلى
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // وظيفة العودة للأعلى
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // تأثيرات الظهور التدريجي للعناصر
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // تطبيق تأثير الظهور على العناصر
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // تأثيرات إضافية عند التمرير
+    window.addEventListener('scroll', () => {
+      const boxes = document.querySelectorAll('.box');
+      boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.8;
+        
+        if(boxTop < triggerBottom) {
+          box.style.opacity = '1';
+          box.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    // تهيئة العناصر للتحريك
+    document.querySelectorAll('.box').forEach(box => {
+      box.style.opacity = '0';
+      box.style.transform = 'translateY(20px)';
+      box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    // تشغيل التحريك بعد تحميل الصفحة
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.box').forEach((box, index) => {
+          setTimeout(() => {
+            box.style.opacity = '1';
+            box.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }, 500);
+    });
+
+    // تأثيرات تفاعلية إضافية
+    document.querySelectorAll('.box').forEach(box => {
+      box.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px) scale(1.05)';
+      });
+      
+      box.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(-10px) scale(1.05)';
+      });
+    });
+
+    // تأثير النقر على العناصر
+    document.querySelectorAll('.box').forEach(box => {
+      box.addEventListener('click', function() {
+        this.style.background = 'linear-gradient(145deg, #43a047, #2e7d32)';
+        setTimeout(() => {
+          this.style.background = '';
+        }, 300);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الصفات التي لا يشترك معه أحد فيها - كورس لاهوت العقيدة</title>
+  <meta name="description" content="دراسة في الصفات الإلهية التي لا يشارك فيها المسيح أحد: الأزلية، المجد، الغفران، القيامة، الخ...">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #e0e0e0;
+      line-height: 2.2;
+      text-align: right;
+      padding: 30px 20px;
+      min-height: 100vh;
+      font-size: 1.45rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* تأثير النجوم */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* تأثير الموجات */
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234caf50" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+      animation: wave 15s linear infinite;
+    }
+
+    .wave:nth-child(2) {
+      animation-duration: 20s;
+      opacity: 0.5;
+      bottom: 10px;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* تأثيرات الدخول */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      border-bottom: 2px solid #4caf50;
+      padding-bottom: 30px;
+      position: relative;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #4caf50);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #4caf50;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+      font-weight: 800;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #4caf50);
+      border-radius: 3px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 40px 0 20px;
+      padding: 16px 28px;
+      background: rgba(76, 175, 80, 0.15);
+      border-right: 5px solid #4caf50;
+      border-radius: 14px;
+      display: inline-block;
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.6s;
+    }
+
+    h2:hover::before {
+      right: 100%;
+    }
+
+    h2:hover {
+      transform: translateX(-5px);
+      background: rgba(76, 175, 80, 0.25);
+    }
+
+    p {
+      font-size: 1.45rem;
+      margin-bottom: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 10px;
+    }
+
+    blockquote {
+      font-size: 1.8rem;
+      font-style: normal;
+      color: #c8f08a;
+      border-right: 5px solid #4caf50;
+      padding: 22px 35px;
+      margin: 35px auto;
+      background: rgba(76, 175, 80, 0.12);
+      border-radius: 12px;
+      max-width: 880px;
+      line-height: 2.4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    blockquote:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    blockquote::before {
+      content: "“";
+      font-size: 4rem;
+      color: rgba(76, 175, 80, 0.3);
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-family: serif;
+    }
+
+    blockquote p {
+      margin: 12px 0;
+      font-size: 1.8rem;
+      line-height: 2.2;
+    }
+
+    .references {
+      margin: 50px auto;
+      max-width: 900px;
+      padding: 0 10px;
+    }
+
+    .references h3 {
+      font-size: 1.8rem;
+      color: #4caf50;
+      margin: 30px 0 20px;
+      text-align: center;
+    }
+
+    .references ul {
+      font-size: 1.3rem;
+      line-height: 2;
+      color: #bbb;
+      padding-right: 30px;
+    }
+
+    .references li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-right: 20px;
+    }
+
+    .references li::before {
+      content: "•";
+      color: #4caf50;
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a0e7ff;
+      font-size: 1.25rem;
+      padding: 15px 28px;
+      border: 1.5px solid #4caf50;
+      border-radius: 14px;
+      background: rgba(76, 175, 80, 0.1);
+      transition: all 0.35s ease;
+      min-width: 180px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-links a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.6s;
+    }
+
+    .nav-links a:hover::before {
+      right: 100%;
+    }
+
+    .nav-links a:hover {
+      background: #4caf50;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4);
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background: #4caf50;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .floating-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.7);
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #4caf50, #8bc34a);
+      z-index: 1000;
+      transition: width 0.3s ease;
+    }
+
+    .print-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #4caf50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .print-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1.3rem;
+        line-height: 2.1;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        padding: 14px 22px;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+      blockquote {
+        font-size: 1.6rem;
+        padding: 20px 25px;
+      }
+      blockquote p {
+        font-size: 1.6rem;
+      }
+      .nav-links a {
+        font-size: 1.15rem;
+        padding: 13px 22px;
+      }
+      .floating-button, .print-button {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+      }
+      .print-button {
+        left: auto;
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      blockquote {
+        font-size: 1.5rem;
+        padding: 18px 20px;
+      }
+      blockquote p {
+        font-size: 1.5rem;
+      }
+      .nav-links {
+        gap: 14px;
+      }
+      .nav-links a {
+        font-size: 1.1rem;
+        padding: 11px 18px;
+        min-width: 140px;
+      }
+    }
+
+    @media print {
+      .floating-button, .print-button, .waves, .stars, .progress-bar {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 14pt;
+        line-height: 1.6;
+      }
+      h1, h2 {
+        color: #333 !important;
+        page-break-after: avoid;
+      }
+      blockquote {
+        border: 1px solid #ccc;
+        color: #333;
+        background: #f9f9f9;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="header fade-in">
+    <h1>الصفات التي لا يشترك معه أحد فيها</h1>
+    <p style="font-size: 1.25rem; color: #aaa;">دراسة في الصفات الإلهية المطلقة التي تخص يسوع المسيح وحده</p>
+  </div>
+
+  <main>
+    <p class="fade-in">
+      في الكتاب المقدس، هناك صفات تنتمي إلى <strong>الله وحده</strong>، ولا يمكن أن يشترك فيها أحد من المخلوقات. وقد أعلن يسوع المسيح عن نفسه بأنه يمتلك هذه الصفات، مما يُثبت <strong>ألوهيته المطلقة</strong>.
+    </p>
+<main>
+    <h2 class="fade-in">1. الأزلية</h2>
+ <div class="event fade-in">
+    <p class="fade-in">
+      "الكائن الذي كان والذي سيكون". وهذه الصفة لا يمكن أن يمتلكها بشر.
+    </p>
+    <blockquote class="fade-in">
+
+          <p>«اِسْمَعْ لِي يَا يَعْقُوبُ، وَإِسْرَائِيلُ الَّذِي دَعَوْتُهُ: أَنَا هُوَ. أَنَا الأَوَّلُ وَأَنَا الآخِرُ،»  (إش 48: 12).</p>
+    </blockquote>
+        <blockquote class="fade-in">
+      
+        <p>«وَعَلِّمُوهُمْ أَنْ يَحْفَظُوا جَمِيعَ مَا أَوْصَيْتُكُمْ بِهِ. وَهَا أَنَا مَعَكُمْ كُلَّ الأَيَّامِ إِلَى انْقِضَاءِ الدَّهْرِ». آمِينَ.» (مت 28: 20).</p>
+     </blockquote>
+        <blockquote class="fade-in">
+        <p>«قَالَ لَهُمْ يَسُوعُ: «الْحَقَّ الْحَقَّ أَقُولُ لَكُمْ: قَبْلَ أَنْ يَكُونَ إِبْرَاهِيمُ أَنَا كَائِنٌ».» (يو 8: 58).</p>
+      </blockquote>
+      <blockquote class="fade-in">
+        <p>«فِي الْبَدْءِ كَانَ الْكَلِمَةُ، وَالْكَلِمَةُ كَانَ عِنْدَ اللهِ، وَكَانَ الْكَلِمَةُ اللهَ.» (يو 1: 1).</p>
+   </blockquote>
+ </div>
+ </main>
+    <p class="fade-in">يسوع لم يُخلق، بل وُجد قبل كل الدهور.</p>
+
+    <h2 class="fade-in">2. المجد الإلهي</h2>
+    <p class="fade-in">
+      الله يقول: <em>"أنا الرب، هذا اسمي، ولم أعطِ مجدي لآخر"</em> (إشعياء 42: 8). المجد الإلهي لا يُشارَك به.
+    </p>
+    <blockquote class="fade-in">
+      
+    <p>«وَمَتَى جَاءَ ابْنُ الإِنْسَانِ فِي مَجْدِهِ وَجَمِيعُ الْمَلاَئِكَةِ الْقِدِّيسِينَ مَعَهُ، فَحِينَئِذٍ يَجْلِسُ عَلَى كُرْسِيِّ مَجْدِهِ.» (مت 25: 31).</p>
+    </blockquote>
+        <blockquote class="fade-in">
+    <p>«لَيْسَ قُدُّوسٌ مِثْلَ الرَّبِّ، لأَنَّهُ لَيْسَ غَيْرَكَ، وَلَيْسَ صَخْرَةٌ مِثْلَ إِلهِنَا.» (1 صم 2: 2).</p>
+      
+  </blockquote>
+  <blockquote class="fade-in">
+    <p>«وَهذَا نَادَى ذَاكَ وَقَالَ: «قُدُّوسٌ، قُدُّوسٌ، قُدُّوسٌ رَبُّ الْجُنُودِ. مَجْدُهُ مِلْءُ كُلِّ الأَرْضِ».» (إش 6: 3).</p>
+    </blockquote>
+    
+    <p class="fade-in">المجد الذي طلب يسوع هو مجد الأزل، وليس مجداً من الناس.</p>
+</blockquote>
+    <h2 class="fade-in">3. الغفران التام للخطايا</h2>
+    <p class="fade-in">
+      فقط الله له سلطة أن يغفر الخطايا، لأن كل معصية في النهاية هي ضد قدسه.
+    </p>
+    <blockquote class="fade-in">
+      <p>«ثُمَّ قَالَ لَهَا: «مَغْفُورَةٌ لَكِ خَطَايَاكِ».» (لو 7: 48).</p>
+     </blockquote>
+     <blockquote class="fade-in">
+      <p>«اذَا يَتَكَلَّمُ هذَا هكَذَا بِتَجَادِيفَ؟ مَنْ يَقْدِرُ أَنْ يَغْفِرَ خَطَايَا إِلاَّ اللهُ وَحْدَهُ؟» فَلِلْوَقْتِ شَعَرَ يَسُوعُ بِرُوحِهِ أَنَّهُمْ يُفَكِّرُونَ هكَذَا فِي أَنْفُسِهِمْ، فَقَالَ لَهُمْ: «لِمَاذَا تُفَكِّرُونَ بِهذَا فِي قُلُوبِكُمْ؟ أَيُّمَا أَيْسَرُ، أَنْ يُقَالَ لِلْمَفْلُوجِ: مَغْفُورَةٌ لَكَ خَطَايَاكَ، أَمْ أَنْ يُقَالَ: قُمْ وَاحْمِلْ سَرِيرَكَ وَامْشِ؟ وَلكِنْ لِكَيْ تَعْلَمُوا أَنَّ لابْنِ الإِنْسَانِ سُلْطَانًا عَلَى الأَرْضِ أَنْ يَغْفِرَ الْخَطَايَا». قَالَ لِلْمَفْلُوجِ:» (مر 2: 7-10).</p>
+     </blockquote>
+     <blockquote class="fade-in">
+      <p>«وَأَبَوْا الاسْتِمَاعَ، وَلَمْ يَذْكُرُوا عَجَائِبَكَ الَّتِي صَنَعْتَ مَعَهُمْ، وَصَلَّبُوا رِقَابَهُمْ. وَعِنْدَ تَمَرُّدِهِمْ أَقَامُوا رَئِيسًا لِيَرْجِعُوا إِلَى عُبُودِيَّتِهِمْ. وَأَنْتَ إِلهٌ غَفُورٌ وَحَنَّانٌ وَرَحِيمٌ، طَوِيلُ الرُّوحِ وَكَثِيرُ الرَّحْمَةِ، فَلَمْ تَتْرُكْهُمْ.» (نح 9: 17).</p>
+     </blockquote>
+     <blockquote class="fade-in">
+      <p>«إِنْ كُنْتَ تُرَاقِبُ الآثَامَ يَا رَبُّ، يَا سَيِّدُ، فَمَنْ يَقِفُ؟ لأَنَّ عِنْدَكَ الْمَغْفِرَةَ. لِكَيْ يُخَافَ مِنْكَ.» (مز 130: 3-4).</p>
+    </blockquote>
+
+    <h2 class="fade-in">4. قدرة على إقامة الموتى</h2>
+    <p class="fade-in">
+      الحياة والموت بيد الله وحده. ومن يُقيم الموتى يمتلك سلطة الحياة الأزلية.
+    </p>
+    <blockquote class="fade-in">
+    <p>«قَالَ لَهَا يَسُوعُ: «أَنَا هُوَ الْقِيَامَةُ وَالْحَيَاةُ. مَنْ آمَنَ بِي وَلَوْ مَاتَ فَسَيَحْيَا،» (يو 11: 25).</p>
+     </blockquote>
+      <blockquote class="fade-in">
+    <p>«وَإِنْ لَمْ تَكُنِ الْقِيَامَةُ مِنَ الأَمْوَاتِ، فَلَيْسَ الْمَسِيحُ قَدْ قَامَ! وَإِنْ لَمْ يَكُنِ الْمَسِيحُ قَدْ قَامَ، فَبَاطِلٌ إِيمَانُكُمْ. أَنْتُمْ بَعْدُ فِي خَطَايَاكُمْ!» (1 كورنثوس 15: 16-17).</p>
+    </blockquote>
+    <p class="fade-in"><strong>الحياة أبدية</strong>.</p>
+
+    <h2 class="fade-in">5. معرفة الأفكار السرية</h2>
+    <p class="fade-in">
+      «لِيَنْتَهِ شَرُّ الأَشْرَارِ وَثَبِّتِ الصِّدِّيقَ. فَإِنَّ فَاحِصَ الْقُلُوبِ وَالْكُلَى اللهُ الْبَارُّ.» (مز 7: 9).
+    </p>
+    <blockquote class="fade-in">
+      <p>«اَلْقَلْبُ أَخْدَعُ مِنْ كُلِّ شَيْءٍ وَهُوَ نَجِيسٌ، مَنْ يَعْرِفُهُ؟ أَنَا الرَّبُّ فَاحِصُ الْقَلْبِ مُخْتَبِرُ الْكُلَى لأُعْطِيَ كُلَّ وَاحِدٍ حَسَبَ طُرُقِهِ، حَسَبَ ثَمَرِ أَعْمَالِهِ.» (إر 17: 9-10).</p>
+      <p>«ولما رأى يسوع إيمانهم، قال : يا ابني، مغفورة لك خطاياك» (مرقس 2: 5) — وعندما اعترضوا، عرف أفكارهم!</p>
+    </blockquote>
+    <p class="fade-in">معرفة الأفكار دليل على كونه "الذي يفتش الكلى والقلوب" (رؤيا 2: 23).</p>
+
+    <h2 class="fade-in">6. الاستحقاق للعبادة</h2>
+    <p class="fade-in">
+      العبادة تُقدَّم لله وحده (تثنية 6: 13)
+    </p>
+    <blockquote class="fade-in">
+      <p>«وإذا كان الجميع سيسجدون له، ابن الله» (عبرانيين 1: 6).</p>
+     </blockquote>
+     <blockquote class="fade-in">
+      <p>«فَسَجَدَ له التلميذان» (متى 14: 33)، و«سجد له العشار» (لو 18: 13)، ولم يرُدها يسوع!</p>
+    </blockquote>
+    <p class="fade-in">لو كان مجرد نبي، لقال: "لا تسجد لي"، كما فعل بولس (أعمال 14: 15). لكنه قبل السجود لأنه الله.</p>
+</blockquote>
+    <h2 class="fade-in">7. السيادة على الكون</h2>
+    <p class="fade-in">
+      الله وحده يمسك كل الأشياء بكلمته. وهذه الصفة تُنسب إلى المسيح.
+    </p>
+    <blockquote class="fade-in">
+      <p>«الذي هو بهاء مجده، ورسم جوهره، وهو يحمل كل الأشياء بكلمة قدرته» (عبرانيين 1: 3).</p>
+      </blockquote>
+      <blockquote class="fade-in">
+      <p>«فيه كان كل شيء، وبه قام كل شيء» (كولوسي 1: 17).</p>
+    </blockquote>
+    <p class="fade-in">المسيح ليس خاضعًا للطبيعة، بل هو <strong>القائم عليها</strong>.</p>
+  </main>
+
+  <!-- التصفح -->
+  <div class="navigation fade-in">
+    <p style="font-size: 1.2rem; color: #bbb;">تابع السلسلة:</p>
+    <div class="nav-links">
+      <a href="كورس لاهوت العقيده تجربه 2.html"><i class="fas fa-home"></i> القائمة الرئيسية</a>
+      <a href="شهاده الاب عن الابن.html"><i class="fas fa-arrow-left"></i> التالي: شهادة الأب عن الابن</a>
+    </div>
+  </div>
+
+  <div class="floating-button" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <div class="print-button" id="printButton">
+    <i class="fas fa-print"></i>
+  </div>
+
+  <script>
+    (function () {
+      // إنشاء النجوم
+      const starsContainer = document.getElementById('stars');
+      const starCount = 150;
+      
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // حجم عشوائي للنجوم
+        const size = Math.random() * 3 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // مواضع عشوائية
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // مدة ومدة تأخير عشوائية للوميض
+        const duration = Math.random() * 5 + 3;
+        const delay = Math.random() * 5;
+        star.style.animationDuration = `${duration}s`;
+        star.style.animationDelay = `${delay}s`;
+        
+        starsContainer.appendChild(star);
+      }
+
+      const progressBar = document.getElementById('progressBar');
+      const scrollToTopButton = document.getElementById('scrollToTop');
+      const printButton = document.getElementById('printButton');
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      // إظهار العناصر عند التمرير
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
+
+      // شريط التقدم
+      window.addEventListener('scroll', function () {
+        const winHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const denom = (docHeight - winHeight);
+        let scrollPercent = 0;
+        if (denom > 0) {
+          scrollPercent = (scrollTop / denom) * 100;
+          scrollPercent = Math.max(0, Math.min(100, scrollPercent));
+        }
+        if (progressBar) progressBar.style.width = scrollPercent + '%';
+
+        if (scrollToTopButton) {
+          scrollToTopButton.style.display = scrollTop > 300 ? 'flex' : 'none';
+        }
+      });
+
+      // زر العودة للأعلى
+      if (scrollToTopButton) {
+        scrollToTopButton.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // زر الطباعة
+      if (printButton) {
+        printButton.addEventListener('click', () => {
+          window.print();
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>كورس اللاهوت العقيدي - من هو المسيح؟</title>
+  <meta name="description" content="دراسة لاهوتية عن شخصية المسيح وشهادته بأعماله ومعجزاته">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #e0e0e0;
+      line-height: 2.2;
+      text-align: right;
+      padding: 30px 20px;
+      min-height: 100vh;
+      font-size: 1.45rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* تأثير النجوم */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* تأثير الموجات */
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234caf50" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+      animation: wave 15s linear infinite;
+    }
+
+    .wave:nth-child(2) {
+      animation-duration: 20s;
+      opacity: 0.5;
+      bottom: 10px;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #4caf50;
+      margin-bottom: 10px;
+      font-weight: 800;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 30px 0 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: #4caf50;
+      margin: 35px 0 20px;
+      font-weight: 800;
+      text-align: center;
+      padding: 15px;
+      background: rgba(76, 175, 80, 0.1);
+      border-right: 4px solid #4caf50;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    .verse-box {
+      margin: 25px auto;
+      max-width: 900px;
+      padding: 0 10px;
+    }
+
+    .verse-box blockquote {
+      font-size: 1.8rem;
+      color: #c8f08a;
+      border-right: 5px solid #4caf50;
+      padding: 22px 35px;
+      background: rgba(76, 175, 80, 0.12);
+      border-radius: 12px;
+      line-height: 2.4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      position: relative;
+      font-weight: 500;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .verse-box blockquote::before {
+      content: "“";
+      font-size: 4rem;
+      color: rgba(76, 175, 80, 0.3);
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-family: serif;
+    }
+
+    .verse-box p {
+      font-size: 1.45rem;
+      color: #e0e0e0;
+      margin-top: 10px;
+      line-height: 2.1;
+      text-align: right;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #a0e7ff;
+      font-size: 1.25rem;
+      padding: 15px 28px;
+      border: 1.5px solid #4caf50;
+      border-radius: 14px;
+      background: rgba(76, 175, 80, 0.1);
+      transition: all 0.35s ease;
+      min-width: 180px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-links a:hover {
+      background: #4caf50;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4);
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background: #4caf50;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .floating-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.7);
+    }
+
+    .print-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #4caf50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .print-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.7);
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #4caf50, #8bc34a);
+      z-index: 1000;
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 1.3rem; }
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.8rem; }
+      .section-title { font-size: 2rem; }
+      .verse-box blockquote { font-size: 1.6rem; padding: 20px 25px; }
+      .verse-box p { font-size: 1.3rem; }
+      .floating-button, .print-button {
+        width: 50px; height: 50px; font-size: 1.3rem;
+        bottom: 20px;
+      }
+      .floating-button { left: 20px; }
+      .print-button { right: 20px; }
+    }
+
+    @media print {
+      .floating-button, .print-button, .waves, .stars, .progress-bar {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 14pt;
+      }
+      h1, h2, .section-title {
+        color: #333 !important;
+      }
+      .verse-box blockquote {
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        color: #333;
+      }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="header fade-in">
+    <h1>من هو المسيح؟</h1>
+    <h2>تابع شهادة أعماله ومعجزاته</h2>
+    <p style="font-size: 1.5rem; color: #aaa; margin-top: 15px;">دعونا نتذكر صفات الله:</p>
+    <p style="font-size: 1.5rem; color: #c8f08a; margin-top: 10px; font-weight: 700;">
+      خالق – أزلي أبدى – قادر على كل شيء – عالم بكل شيء – قدوس – غير محدود – غافر الخطايا – مستحق العبادة
+    </p>
+  </div>
+
+  <main>
+    <!-- القسم 1 -->
+    <div class="section-title fade-in">أولاً: الخلق</div>
+
+    <!-- القسم 2 -->
+    <div class="section-title fade-in">ثانياً: دخوله من الأبواب المغلقة</div>
+
+    <div class="verse-box fade-in">
+      <p><strong>السلطان المطلق:</strong> يعني يقدر يعمل أي حاجة بمجرد الأمر، يقول للشيء كن فيكون.</p>
+      <blockquote>(يو 20: 19)</blockquote>
+      <p>كمان أيضًا من ضمن أعماله إقامة الموتى، لكن هناك أماكن لم يقم فيها قديسين كانوا يقومون الموتى؟ القديسين: كانوا يطلبون ياسِم الله أو ياسِم السيد المسيح.</p>
+    </div>
+
+    <div class="verse-box fade-in">
+      <p><strong>في مثال:</strong> في العهد القديم أقام إيليا ابن أرملة صرخ ولَكْنه "صرخ وطلب من الرب" (1 مل 17: 21).</p>
+      <blockquote>(اع 9: 40)</blockquote>
+      <p>وفي العهد الجديد عندما أقام القديس بطرس الرسول طاييْشْ من الموت لكنه جثَّ على ركبتيه وصلّى.</p>
+      <p><strong>أما السيد المسيح:</strong> كان يقيم الموتى ببساطته "يعني بالأمر" زي "امْرُ" أو "تعال" أو "قُم".</p>
+      <blockquote>(لو 7: 11–17)</blockquote>
+      <p>أقام ابن أرملة تايين: قال للشاب "لك أقول قم".</p>
+      <blockquote>(مر 5: 38–42)</blockquote>
+      <p>وأيضًا عندما أقام ابنة يايرس: قال لها "يا صبية قومي".</p>
+      <blockquote>(يو 11: 1–44)</blockquote>
+      <p>وحين أقام أربع أية بعد لعازر: صرح بصوت عظيم "لعازر هلم خارجاً".</p>
+    </div>
+
+    <!-- القسم 3 -->
+    <div class="section-title fade-in">ثالثاً: دخوله من الأبواب المغلقة</div>
+    <div class="verse-box fade-in">
+      <p><strong>في بعد قيامته:</strong> كان الباب مغلقًا، وكان التلاميذ مجتمعين معًا، وجدوا الرب يسوع واقف في وسطهم فجأة مع أن الأبواب كانت مغلقة؛ "ولما كانت عشية ذلك اليوم" (يو 20: 19).</p>
+    </div>
+
+    <!-- القسم 4 -->
+    <div class="section-title fade-in">رابعاً: صعوده إلى السماء</div>
+    <div class="verse-box fade-in">
+      <p><strong>فهو الوحيد الذي صعد إلى السماء، وهذا عكس طبيعة الجاذبية الأرضية.</strong></p>
+      <blockquote>(مر 16: 14–20)</blockquote>
+      <p>أيضًا بعد قيامته من الأموات وظهوره لتلاميذه.</p>
+    </div>
+
+    <!-- القسم 5 -->
+    <div class="section-title fade-in">خامساً: عارف كل شيء</div>
+    <div class="verse-box fade-in">
+      <p><strong>فهو كان يعلم كل شيء وكل ما في القلب والفكر.</strong> وهذا ثراه عندما جلس مع السامرية عند البئر وقال لها عن أشياء.</p>
+      <blockquote>(يو 4: 16–19)</blockquote>
+      <p>لا أحد يعرفها عَنْها فقَالَتْ له "يا سيد، أرى أنك نبي".</p>
+      <blockquote>(لو 7: 36–4)</blockquote>
+      <p>وأيضًا عندما كان في بيت سمعان القريسي وجاءت المرأة الخاطئة للسيد المسيح فبدأ يتكلم سمعان في نفسه لكن قال له الرب يسوع فجأة "ياسمعان عندي شيء أقوله لك".</p>
+    </div>
+
+    <!-- القسم 6 -->
+    <div class="section-title fade-in">سادساً: ظهوره في أشكال مختلفة</div>
+    <div class="verse-box fade-in">
+      <p><strong>في مثال:</strong> ظهر للمسيحيين في أشكال مختلفة، حتى أنه ظهر كرجل غريب في الطريق إلى عمواس.</p>
+      <blockquote>(لو 24: 13–35)</blockquote>
+      <p>ثم ظهر لهم كأنه لا يعرفهم، ثم أخذ الخبز وباركه وكسره وأعطاهم، فعرفوه.</p>
+    </div>
+
+    <!-- القسم 7 -->
+    <div class="section-title fade-in">سابعاً: وجوده في كل مكان</div>
+    <div class="verse-box fade-in">
+      <p><strong>قال المسيح: "أنا معكم كل الأيام إلى انقضاء الدهر".</strong></p>
+      <blockquote>(مت 28: 20)</blockquote>
+      <p>هذا يعني أنه ليس فقط موجود في السماء، بل معنا في كل مكان.</p>
+    </div>
+
+    <!-- القسم 8 -->
+    <div class="section-title fade-in">ثامناً: استقباله للعبادة</div>
+    <div class="verse-box fade-in">
+      <p><strong>الله وحده يستحق العبادة.</strong> ولكن المسيح قبل السجود منه.</p>
+      <blockquote>(مت 14: 33)</blockquote>
+      <p>فإذا كان مجرد نبي، لكان قال "لا تسجد لي"، لكنه قبل السجود لأنه الله.</p>
+    </div>
+
+    <!-- القسم 9 -->
+    <div class="section-title fade-in">تاسعاً: السيادة على الكون</div>
+    <div class="verse-box fade-in">
+      <p><strong>الله وحده يمسك كل الأشياء بكلمته.</strong> وهذه الصفة تُنسب إلى المسيح.</p>
+      <blockquote>(عب 1: 3)</blockquote>
+      <p>"الذي هو بهاء مجده، ورسم جوهره، وهو يحمل كل الأشياء بكلمة قدرته".</p>
+    </div>
+
+    <!-- القسم 10 -->
+    <div class="section-title fade-in">عاشراً: الأزلية</div>
+    <div class="verse-box fade-in">
+      <p><strong>ليس له بداية ولا نهاية.</strong> قال: "قبل أن يكون إبراهيم أنا كائن" (يو 8: 58).</p>
+      <blockquote>(يو 1: 1)</blockquote>
+      <p>"في البدء كان الكلمة، والكلمة كان عند الله، وكان الكلمة الله".</p>
+    </div>
+  </main>
+
+  <div class="navigation fade-in">
+    <p style="font-size: 1.2rem; color: #bbb;">تابع السلسلة:</p>
+    <div class="nav-links">
+      <a href="كورس لاهوت العقيده تجربه 2.html"><i class="fas fa-home"></i> القائمة الرئيسية</a>
+      <a href="شهاده الاب عن الابن.html"><i class="fas fa-arrow-left"></i> التالي: شهادة الأب عن الابن</a>
+    </div>
+  </div>
+
+  <div class="floating-button" id="scrollToTop" aria-label="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <div class="print-button" id="printButton" aria-label="طباعة الصفحة">
+    <i class="fas fa-print"></i>
+  </div>
+
+  <script>
+    (function () {
+      // إنشاء النجوم (100 نجمة)
+      const starsContainer = document.getElementById('stars');
+      const starCount = 100;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 2 + 0.5;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        const duration = Math.random() * 6 + 4;
+        const delay = Math.random() * 5;
+        star.style.animationDuration = `${duration}s`;
+        star.style.animationDelay = `${delay}s`;
+        starsContainer.appendChild(star);
+      }
+
+      // التمرير والتفاعل
+      const progressBar = document.getElementById('progressBar');
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      const printBtn = document.getElementById('printButton');
+
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const s = window.scrollY;
+        progressBar.style.width = (h > 0 ? (s / h) * 100 : 0) + '%';
+        scrollToTopBtn.style.display = s > 300 ? 'flex' : 'none';
+      });
+
+      scrollToTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      printBtn?.addEventListener('click', () => window.print());
+
+      // ظهور العناصر عند التمرير
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    })();
+  </script>
+
+</body>
+</html>

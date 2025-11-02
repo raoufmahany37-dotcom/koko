@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>شهادة المسيح على نفسه - كورس لاهوت العقيدة</title>
+  <meta name="description" content="دراسة في كلمات السيد المسيح عن ذاته: أنا هو، ابن الإنسان، الراعي الصالح، والطريق والحق والحياة.">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-light: #81c784;
+      --bg: #000;
+      --text: #e0e0e0;
+      --border-radius: 14px;
+      --shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg), #0a1a0a);
+      color: var(--text);
+      line-height: 2.3;
+      text-align: right;
+      padding: 30px 20px;
+      min-height: 100vh;
+      font-size: 1.8rem; /* خط أكبر وأكثر وضوحًا */
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: #ffffff;
+      margin: 50px 0 25px;
+      padding: 20px 35px;
+      background: rgba(76, 175, 80, 0.15);
+      border-right: 6px solid var(--primary);
+      border-radius: var(--border-radius);
+      display: inline-block;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    h2:hover {
+      background: rgba(76, 175, 80, 0.2);
+      transform: scale(1.02);
+    }
+
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+      letter-spacing: -0.02em;
+    }
+
+    blockquote {
+      font-size: 1.9rem;
+      font-style: italic;
+      color: var(--primary-light);
+      border-right: 6px solid var(--primary);
+      padding: 28px 40px;
+      margin: 45px auto;
+      background: rgba(76, 175, 80, 0.12);
+      border-radius: var(--border-radius);
+      max-width: 880px;
+      line-height: 2.4;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    blockquote::before {
+      content: "“";
+      font-size: 5rem;
+      color: rgba(76, 175, 80, 0.15);
+      position: absolute;
+      top: -20px;
+      right: 20px;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 80px;
+      padding: 40px 20px;
+      border-top: 1px solid var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #b3e5fc;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding: 16px 30px;
+      border: 2px solid var(--primary);
+      border-radius: var(--border-radius);
+      background: rgba(76, 175, 80, 0.1);
+      transition: var(--transition);
+      min-width: 180px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
+    }
+
+    /* زر العودة إلى الأعلى */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: scale(1.1);
+      background: #388e3c;
+    }
+
+    /* اسم المؤلف */
+    .footer-name {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.4rem;
+      color: var(--primary-light);
+      font-weight: bold;
+      font-family: 'Tajawal', sans-serif;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      border: 1px solid var(--primary);
+      transition: var(--transition);
+    }
+
+    .footer-name:hover {
+      color: #c8f08a;
+      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.05);
+    }
+
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.6rem;
+      }
+      h2 {
+        font-size: 2.1rem;
+      }
+      p, blockquote {
+        font-size: 1.6rem;
+      }
+      .nav-links a {
+        font-size: 1.4rem;
+        padding: 14px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      p, blockquote {
+        font-size: 1.5rem;
+      }
+      .footer-name, .back-to-top {
+        left: 15px;
+        bottom: 15px;
+      }
+      .footer-name {
+        font-size: 1.2rem;
+        padding: 10px 14px;
+      }
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+      }
+    }
+
+    /* دعم الطباعة */
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 16pt;
+      }
+      .back-to-top, .footer-name {
+        display: none;
+      }
+      h1, h2 {
+        color: #2e7d32;
+      }
+      blockquote {
+        border-right: 5px solid var(--primary);
+        color: #2e7d32;
+        background: #f9f9f9;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>شهادة المسيح على نفسه</h1>
+    <p style="font-size: 1.6rem; color: #aaa; margin-top: 10px;">
+      كيف أعلن يسوع عن هوّيته الإلهية من خلال كلماته؟
+    </p>
+  </div>
+
+  <main>
+    <p>
+      لم يكتفِ السيد المسيح بمعجزاته أو شهادة الآب عنه، بل أعلن بصراحة عن طبيعته الإلهية وشخصه المقدس. لقد تحدث يسوع عن ذاته بعبارات فريدة تُظهر أنه ليس مجرد نبي أو معلم، بل هو <strong>الكلمة المتجسد</strong>، <strong>ابن الله الحي</strong>، و<strong>المخلّص الوحيد</strong>.
+    </p>
+
+    <h2> أنا هو</h2>
+    <p>
+      وفي إنجيل يوحنا، كررها </p>7=مرات</p> 
+    </p>
+    <blockquote>
+      "أنا هو خبز الحياة" (يوحنا 6: 35)<br>
+      "أنا هو نور العالم" (يوحنا 8: 12)<br>
+      "أنا هو باب" (يوحنا 10: 9)<br>
+      "أنا هو الراعي الصالح" (يوحنا 10: 11)<br>
+      "أنا هو القيامة والحياة" (يوحنا 11: 25)<br>
+      "أنا هو الطريق والحق والحياة" (يوحنا 14: 6)<br>
+      "أنا هو الكرمة الحقيقية" (يوحنا 15: 1)
+    </blockquote>
+    <p>هذه العبارات تُظهر أنه مصدر الحياة، النور، الخلاص، والاتصال بالله.</p>
+
+    <h2>٢. "قبل أن يكون إبراهيم، أنا هو"</h2>
+    <blockquote>
+      "58قَالَ لَهُمْ يَسُوعُ:«الْحَقَّ الْحَقَّ أَقُولُ لَكُمْ: قَبْلَ أَنْ يَكُونَ إِبْرَاهِيمُ أَنَا كَائِنٌ». " (يوحنا 8: 58)
+    </blockquote>
+    <p>
+      هذه العبارة أثارت غضب اليهود فأخذوا حجارة ليَرجموه، لأنهم فهموا أنها <strong>بالأزلية</strong>، أي أنه وُجد قبل إبراهيم بقرون، بل منذ الأزل. إنها شهادة مباشرة على ألوهيته.
+    </p>
+
+    <h2>٣. "أنا والآب واحد"</h2>
+    <blockquote>
+      "أنا والآب واحد" (يوحنا 10: 30)
+    </blockquote>
+    <p>
+      لم يقل "أنا مع الآب"، بل "واحد"، مما يدل على وحدة الجوهر مع الآب. فرد اليهود بوضوح: <em>"33أَجَابَهُ الْيَهُودُ قَائِلِينَ:«لَسْنَا نَرْجُمُكَ لأَجْلِ عَمَل حَسَنٍ، بَلْ لأَجْلِ تَجْدِيفٍ، فَإِنَّكَ وَأَنْتَ إِنْسَانٌ تَجْعَلُ نَفْسَكَ إِلهًا» "</em> (يوحنا 10: 33)، مما يؤكد أنهم فهموا أنه يدّعي الألوهية.
+    </p>
+
+    <h2>٤. "من رآني فقد رأى الآب"</h2>
+    <blockquote>
+      <p>"! اَلَّذِي رَآنِي فَقَدْ رَأَى الآبَ، فَكَيْفَ تَقُولُ أَنْتَ: أَرِنَا الآبَ؟ " </p>
+      (يوحنا 14: 9)
+    </blockquote>
+    <p>
+      يسوع لا يُمثّل الله فحسب، بل يُجسّد حضوره وجوهره. من يراه، يرى الآب، لأن له نفس الطبيعة الإلهية.
+    </p>
+
+    <h2>٥. صلاة الاعتراف الأخير</h2>
+    <blockquote>
+      ". 5وَالآنَ مَجِّدْنِي أَنْتَ أَيُّهَا الآبُ عِنْدَ ذَاتِكَ بِالْمَجْدِ الَّذِي كَانَ لِي عِنْدَكَ قَبْلَ كَوْنِ الْعَالَمِ. " (يوحنا 17: 5)
+    </blockquote>
+    <p>
+      هنا يُعلن يسوع عن وجوده <strong>قبل تأسيس العالم</strong>، وعن تمتعه بالمجد مع الآب – وهو ما لا يمكن أن يدّعيه بشر.
+    </p>
+  </main>
+
+  <div class="navigation">
+    <p style="font-size: 1.6rem; color: #bbb; margin-bottom: 15px;">انتقل إلى وحدات أخرى:</p>
+    <div class="nav-links">
+      <a href="كورس لاهوت العقيده تجربه 2.html">🏠 العودة للرئيسية</a>
+      <a href="شهاده الاب عن الابن.html">السابق: شهادة الآب عن الابن</a>
+      <a href="شهاده التلميذ و البشريه كامله.html">التالي: شهادة التلميذ والبشرية كلها</a>
+    </div>
+  </div>
+
+  <!-- اسم المؤلف -->
+  <div class="footer-name">
+    Kyrlos Raouf
+  </div>
+
+  <!-- تفعيل زر العودة عند التمرير -->
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

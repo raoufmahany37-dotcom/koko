@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تسجيل الدخول</title>
+  <style>
+    body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f4f6f8;margin:0;font-family:'Segoe UI', Tahoma, Arial, sans-serif}
+    .card{background:white;padding:28px;border-radius:12px;box-shadow:0 6px 20px rgba(20,30,50,0.08);width:320px}
+    h1{font-size:20px;margin:0 0 14px;text-align:center}
+    label{display:block;margin-top:10px;font-size:13px}
+    input{width:100%;padding:10px;border:1px solid #d7dbe0;border-radius:8px;margin-top:6px;font-size:14px}
+    button{width:100%;margin-top:18px;padding:10px;border-radius:10px;border:0;font-size:15px;cursor:pointer;transition:transform .15s}
+    button:active{transform:scale(.96)}
+    .btn-primary{background:#2563eb;color:white}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>تسجيل الدخول</h1>
+    <form id="loginForm" autocomplete="off">
+      <label for="username">اسم المستخدم</label>
+      <input id="username" name="username" type="text" placeholder="أدخل اسم المستخدم" required>
+
+      <label for="password">كلمة المرور</label>
+      <div style="position:relative">
+        <input id="password" name="password" type="password" placeholder="أدخل كلمة المرور" required style="padding-right:36px">
+        <!-- رمز العين: عند الضغط عليه → يذهب مباشرةً إلى الصفحة الرئيسية -->
+        <svg id="togglePassword" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;user-select:none">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </div> 
+  <div class="nav-links">
+    <a href="كورس لاهوت العقيده تجربه 2.html" style="font-size:13px;color:#2563eb;text-decoration:none;">العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+      <button type="button" class="btn-primary" id="loginBtn">تسجيل الدخول</button>
+    </form>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const loginBtn = document.getElementById('loginBtn');
+
+    // زر تسجيل الدخول: يُظهر/يخفي كلمة المرور عند النقر (كما في الكود الأصلي)
+    loginBtn.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+    });
+
+    // ✅ رمز العين: عند الضغط → الذهاب فورًا إلى الصفحة الرئيسية
+    togglePassword.addEventListener('click', () => {
+      window.location.href = 'كورس لاهوت العقيده تجربه 2.html';
+    });
+
+    // ✅ الاحتفاظ بسلوك "هروب زر تسجيل الدخول" عند اقتراب مؤشر الفأرة
+    loginBtn.addEventListener('mousemove', (e) => {
+      const rect = loginBtn.getBoundingClientRect();
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const btnX = rect.left + rect.width / 2;
+      const btnY = rect.top + rect.height / 2;
+      const distance = Math.hypot(mouseX - btnX, mouseY - btnY);
+      if (distance < 120) {
+        const x = Math.random() * 400 - 200;
+        const y = Math.random() * 400 - 200;
+        loginBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+  </script>
+</body>
+</html>

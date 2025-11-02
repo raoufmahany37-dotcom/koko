@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>شهادة التلميذ والبشرية كلها - كورس لاهوت العقيدة</title>
+  <meta name="description" content="دراسة في شهادة التلاميذ والبشرية جمعاء على ألوهية يسوع المسيح: من بطرس إلى الأمم.">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-light: #81c784;
+      --bg: #000;
+      --text: #e0e0e0;
+      --border-radius: 16px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg), #0a1a0a);
+      color: var(--text);
+      line-height: 2.3;
+      text-align: right;
+      padding: 30px 20px;
+      min-height: 100vh;
+      font-size: 1.8rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* تأثير النجوم */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* تأثير الموجات */
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234caf50" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+      animation: wave 15s linear infinite;
+    }
+
+    .wave:nth-child(2) {
+      animation-duration: 20s;
+      opacity: 0.5;
+      bottom: 10px;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* تأثيرات دخول العناصر */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+      font-weight: 800;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 10%;
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      border-radius: 3px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: #ffffff;
+      margin: 50px 0 25px;
+      padding: 20px 40px;
+      background: rgba(76, 175, 80, 0.15);
+      border-right: 6px solid var(--primary);
+      border-radius: var(--border-radius);
+      display: inline-block;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: var(--transition);
+    }
+
+    h2:hover::before {
+      right: 100%;
+    }
+
+    h2:hover {
+      background: rgba(76, 175, 80, 0.2);
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+      letter-spacing: -0.02em;
+    }
+
+    blockquote {
+      font-size: 1.9rem;
+      font-style: italic;
+      color: var(--primary-light);
+      border-right: 6px solid var(--primary);
+      padding: 30px 40px;
+      margin: 45px auto;
+      background: rgba(76, 175, 80, 0.12);
+      border-radius: var(--border-radius);
+      max-width: 880px;
+      line-height: 2.4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    blockquote:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(76, 175, 80, 0.2);
+    }
+
+    blockquote::before {
+      content: "“";
+      font-size: 5rem;
+      color: rgba(76, 175, 80, 0.15);
+      position: absolute;
+      top: -20px;
+      right: 20px;
+    }
+
+    blockquote::after {
+      content: "”";
+      font-size: 5rem;
+      color: rgba(76, 175, 80, 0.15);
+      position: absolute;
+      bottom: -40px;
+      left: 20px;
+    }
+
+    .verse-ref {
+      display: block;
+      text-align: left;
+      font-size: 1.5rem;
+      margin-top: 15px;
+      color: #aaa;
+      font-style: normal;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 80px;
+      padding: 40px 20px;
+      border-top: 1px solid var(--primary);
+      position: relative;
+    }
+
+    .navigation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80%;
+      max-width: 500px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #b3e5fc;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding: 16px 30px;
+      border: 2px solid var(--primary);
+      border-radius: var(--border-radius);
+      background: rgba(76, 175, 80, 0.1);
+      transition: var(--transition);
+      min-width: 180px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
+    }
+
+    /* زر العودة إلى الأعلى */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      border: none;
+      outline: none;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: scale(1.1);
+      background: #388e3c;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+    }
+
+    /* اسم المؤلف */
+    .footer-name {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.4rem;
+      color: var(--primary-light);
+      font-weight: bold;
+      font-family: 'Tajawal', sans-serif;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      border: 1px solid var(--primary);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-name:hover {
+      color: #c8f08a;
+      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+
+    .footer-name::before {
+      content: "✝";
+      font-size: 1.2rem;
+    }
+
+    /* تأثيرات النص المتلألئة */
+    .sparkle-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .sparkle-text::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: translateX(-100%);
+      animation: sparkle 3s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* تأثيرات الضوء العائم */
+    .floating-light {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+      filter: blur(20px);
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .floating-light:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-light:nth-child(2) {
+      top: 60%;
+      left: 80%;
+      animation-delay: 5s;
+    }
+
+    .floating-light:nth-child(3) {
+      top: 80%;
+      left: 20%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(20px, 20px) scale(1.1); }
+      50% { transform: translate(-15px, 10px) scale(0.9); }
+      75% { transform: translate(10px, -15px) scale(1.05); }
+    }
+
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.6rem;
+      }
+      h2 {
+        font-size: 2.1rem;
+      }
+      p, blockquote {
+        font-size: 1.6rem;
+      }
+      .nav-links a {
+        font-size: 1.4rem;
+        padding: 14px 24px;
+      }
+      .floating-light {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      p, blockquote {
+        font-size: 1.5rem;
+      }
+      .footer-name, .back-to-top {
+        left: 15px;
+        bottom: 15px;
+      }
+      .footer-name {
+        font-size: 1.2rem;
+        padding: 10px 14px;
+      }
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links a {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /* دعم الطباعة */
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 16pt;
+      }
+      .back-to-top, .footer-name, .stars, .waves, .floating-light {
+        display: none;
+      }
+      h1, h2 {
+        color: #2e7d32;
+      }
+      blockquote {
+        border-right: 5px solid var(--primary);
+        color: #2e7d32;
+        background: #f9f9f9;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- تأثير النجوم -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- تأثير الموجات -->
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <!-- أضواء عائمة -->
+  <div class="floating-light"></div>
+  <div class="floating-light"></div>
+  <div class="floating-light"></div>
+
+  <div class="header">
+    <h1 class="fade-in">شهادة التلميذ والبشرية كلها</h1>
+    <p style="font-size: 1.6rem; color: #aaa;" class="fade-in">
+      كيف اعترف التلاميذ والأمم جمعاء بيسوع كربّ ومخلّص العالم؟
+    </p>
+  </div>
+
+  <main>
+    <p class="fade-in">
+      لم تكن شهادة المسيح على نفسه وشهادة الآب كافيتين فحسب، بل تبعها <strong>اعتراف عظيم من التلاميذ والبشرية جمعاء</strong> بأن يسوع هو "ابن الله الحي"، "رب المجد"، و"مخلّص العالم". هذه الشهادة لم تكن عاطفية، بل نابعة من رؤية حقيقية لهويته الإلهية.
+    </p>
+
+    <h2 class="fade-in">١. شهادة بطرس: "أنت هو المسيح، ابن الله الحي"</h2>
+    <blockquote class="fade-in">
+      "وأنت من تقولون إني أنا؟ فأجاب بطرس وقال: أنت هو المسيح، ابن الله الحي" 
+      <span class="verse-ref">(متى ١٦: ١٦)</span>
+    </blockquote>
+    <p class="fade-in">
+      هذا الاعتراف لم يكن من "الجسد والدم"، بل من الآب السماوي. وقد أثنى يسوع عليه بقوله: <em>"على هذه الصخرة أبني كنيستي"</em> (متى ١٦: ١٨). فأس الكنيسة هو <strong>اعتراف بألوهية المسيح</strong>.
+    </p>
+
+    <h2 class="fade-in">٢. شهادة توما: "ربي وإلهي!"</h2>
+    <blockquote class="fade-in">
+      "27ثُمَّ قَالَ لِتُومَا:«هَاتِ إِصْبِعَكَ إِلَى هُنَا وَأَبْصِرْ يَدَيَّ، وَهَاتِ يَدَكَ وَضَعْهَا فِي جَنْبِي، وَلاَ تَكُنْ غَيْرَ مُؤْمِنٍ بَلْ مُؤْمِنًا». 28أَجَابَ تُومَا وَقَالَ لَهُ:«رَبِّي وَإِلهِي!»." 
+      <span class="verse-ref">(يوحنا ٢٠: ٢٨)</span>
+    </blockquote>
+    <p class="fade-in">
+      هذه هي <strong>أوضح شهادة تُعلن ألوهية المسيح</strong> في الأناجيل. لم يُنكر يسوع هذا القول، بل وافقه: <em>"لأنك رأيتني، آمنتَ؟ طوبى للذين آمنوا ولم يروا"</em>. فلم يقل "لا تسجد لي"، بل قبل الشهادة!
+    </p>
+
+    <h2 class="fade-in">٣. شهادة يوحنا: "الكلمة كان الله"</h2>
+    <blockquote class="fade-in">
+      "في البدء كان الكلمة، والكلمة كان عند الله، وكان الكلمة الله" 
+      <span class="verse-ref">(يوحنا ١: ١)</span>
+    </blockquote>
+    <p class="fade-in">
+      يوحنا، الحبيب، كتب بشجاعة عن <strong>أزلية وجوهر المسيح الإلهي</strong>. لم يقل "الكلمة كان مع الله"، بل "كان الكلمة الله". هذه صيغة لاهوتية دقيقة تثبت وحدة الجوهر مع الآب.
+    </p>
+
+    <h2 class="fade-in">٤. شهادة بولس: "المسيح الذي هو فوق الكل، الله المبارك إلى الأبد"</h2>
+    <blockquote class="fade-in">
+      "ومنهم المسيح حسب الجسد، الذي هو <strong>هو فوق الكل، الله المبارك إلى الأبد. آمين</strong>" 
+      <span class="verse-ref">(رومية ٩: ٥)</span>
+    </blockquote>
+    <p class="fade-in">
+      بولس، اليهودي المتشدّد، يُعلن صراحة أن المسيح هو <strong>"الله المبارك إلى الأبد"</strong> — وهي صيغة دينية يهودية تُستخدم فقط لله.
+    </p>
+
+    <h2 class="fade-in">٥. شهادة الشعب: "مخلّص العالم"</h2>
+    <blockquote class="fade-in">
+      "42وَقَالُوا لِلْمَرْأَةِ:«إِنَّنَا لَسْنَا بَعْدُ بِسَبَبِ كَلاَمِكِ نُؤْمِنُ، لأَنَّنَا نَحْنُ قَدْ سَمِعْنَا وَنَعْلَمُ أَنَّ هذَا هُوَ بِالْحَقِيقَةِ الْمَسِيحُ مُخَلِّصُ الْعَالَمِ»." 
+      <span class="verse-ref">(يوحنا ٤: ٤٢)</span>
+    </blockquote>
+    <p class="fade-in">
+      حتى السامريون، الذين كانوا يُعتبرون خارج دائرة اليهود، اعترفوا بيسوع كـ <strong>"مخلّص العالم"</strong>. لم يقتصر خلاصه على قوم، بل على <strong>البشرية جمعاء</strong>.
+    </p>
+
+    <h2 class="fade-in">٦. شهادة الملائكة: "ملك الملوك، رب الأرباب"</h2>
+    <blockquote class="fade-in">
+      "16وَلَهُ عَلَى ثَوْبِهِ وَعَلَى فَخْذِهِ اسْمٌ مَكْتُوبٌ:«مَلِكُ الْمُلُوكِ وَرَبُّ الأَرْبَابِ»." 
+      <span class="verse-ref">(رؤيا ١٩: ١٦)</span>
+    </blockquote>
+    <p class="fade-in">
+      الملائكة نفسها تسجد له (عبرانيين ١: ٦)، وتُنادي به بأسماء تنتمي لله وحده. لم يُدعَ أحد غيره "رب الأرباب".
+    </p>
+
+    <h2 class="fade-in">٧. شهادة التاريخ: "سنة ميلاد المسيح"</h2>
+    <p class="fade-in">
+      حتى الزمن تغيّر بسببه. <strong>كل العالم يحسب السنين من ميلاد يسوع</strong> — قبل الميلاد (ق.م)، وبعد الميلاد (م). هذه شهادة حضارية وعالمية على مركزه الفريد في تاريخ البشرية.
+    </p>
+  </main>
+
+  <!-- التصفح -->
+  <div class="navigation">
+    <p style="font-size: 1.6rem; color: #bbb;">تابع السلسلة:</p>
+    <div class="nav-links">
+      <a href="شهاده المسيج علي نفسه.html"><i class="fas fa-arrow-right"></i> السابق: شهادة المسيح على نفسه</a>
+      <a href="كورس لاهوت العقيده تجربه 2.html"><i class="fas fa-home"></i> القائمة الرئيسية</a>
+      <a href="شهاده الملائكه والشياطين.html"><i class="fas fa-arrow-left"></i> التالي: شهادة الملائكة والشياطين</a>
+    </div>
+  </div>
+
+  <!-- اسم المؤلف -->
+  <div class="footer-name">
+    Kyrlos Raouf
+  </div>
+
+  <!-- زر العودة إلى الأعلى -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // إنشاء النجوم بشكل عشوائي
+    const starsContainer = document.getElementById('stars');
+    const starCount = 200;
+    
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      
+      // حجم عشوائي للنجوم
+      const size = Math.random() * 3 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // مواضع عشوائية
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      
+      // مدة ومدة تأخير عشوائية للوميض
+      const duration = Math.random() * 5 + 3;
+      const delay = Math.random() * 5;
+      star.style.animationDuration = `${duration}s`;
+      star.style.animationDelay = `${delay}s`;
+      
+      starsContainer.appendChild(star);
+    }
+
+    // تفعيل زر العودة عند التمرير
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // وظيفة العودة للأعلى
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // تأثيرات الظهور التدريجي للعناصر
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // تطبيق تأثير الظهور على العناصر
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // تأثيرات إضافية للعناوين
+    document.querySelectorAll('h2').forEach(heading => {
+      heading.addEventListener('click', function() {
+        this.style.background = 'rgba(76, 175, 80, 0.25)';
+        setTimeout(() => {
+          this.style.background = '';
+        }, 300);
+      });
+    });
+
+    // تأثيرات إضافية للاقتباسات
+    document.querySelectorAll('blockquote').forEach(quote => {
+      quote.addEventListener('click', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 300);
+      });
+    });
+  </script>
+
+</body> 
+</html>
